@@ -8,33 +8,15 @@ body, html {
     height: 100%;
 }
 
-#background-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-}
-
-#ascii-duck {
+#overlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    white-space: pre;
-    font-size: 16px;
-    line-height: 16px;
-    color: #00ff00;
-    user-select: none;
-    z-index: -1;
-}
-
-#overlay {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
     z-index: 1;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
 }
 
 #overlay h1 {
@@ -55,31 +37,61 @@ body, html {
     color: #ffffff;
 }
 
-#hatch-btn, #interact-btn {
+#link-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#pumpfun-link {
+    width: 70%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #00ff00;
+    background: #1b1b1b;
+    color: #00ff00;
+    outline: none;
+}
+
+#link-form button {
     padding: 10px 20px;
     font-size: 1em;
     background-color: #ffcc00;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     color: #1b1b1b;
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
-#hatch-btn:hover, #interact-btn:hover {
+#link-form button:hover {
     background-color: #e6b800;
 }
 
-#message-box {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.2em;
-    text-align: center;
-    max-width: 80%;
-    color: #ffcc00;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.5s;
+#console-output {
+    background: #000000;
+    padding: 20px;
+    height: 300px;
+    overflow-y: auto;
+    text-align: left;
+    border: 1px solid #00ff00;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#download-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ffcc00;
+    border: none;
+    cursor: pointer;
+    color: #1b1b1b;
+}
+
+#download-btn:hover {
+    background-color: #e6b800;
 }
