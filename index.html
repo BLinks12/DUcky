@@ -2,25 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DuckAI - The AI Agent for $DUCKY</title>
+    <title>DuckAI - PumpFun Crypto Analyzer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Background Canvas for AI Visuals -->
-    <canvas id="background-canvas"></canvas>
-
-    <!-- ASCII DuckAI Display -->
-    <pre id="ascii-duck"></pre>
-
     <!-- Overlay Content -->
     <div id="overlay">
         <h1>DuckAI</h1>
-        <h2>The AI Agent for $DUCKY</h2>
-        <p>Interact with DuckAI and explore the world of memes and cryptocurrencies.</p>
-        <button id="hatch-btn">Hatch an Egg</button>
-        <button id="interact-btn">Interact with DuckAI</button>
+        <h2>PumpFun Crypto Analyzer</h2>
+        <p>Submit a PumpFun crypto link for DuckAI's analysis.</p>
+        <form id="link-form">
+            <input type="text" id="pumpfun-link" placeholder="Enter PumpFun link here..." required>
+            <button type="submit">Analyze</button>
+        </form>
+        <div id="console-output"></div>
     </div>
 
+    <!-- Include JavaScript code -->
     <script src="script.js"></script>
 </body>
 </html>
