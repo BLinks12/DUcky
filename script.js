@@ -1,188 +1,79 @@
 // ====================================
-// 1. ASCII DuckAI Animation
+// 1. PumpFun Crypto Analyzer
 // ====================================
 
-const asciiDuckElement = document.getElementById('ascii-duck');
-const duckFrames = [
-`       __
-      <(o )___
-       ( ._> /
-        '---'`,
-`       __
-      <( o)___
-       ( ._> /
-        '---'`,
-`       __
-      <(  o)___
-       ( ._> /
-        '---'`,
-`       __
-      <(   o)___
-       ( ._> /
-        '---'`,
-`       __
-      <(    o)___
-       ( ._> /
-        '---'`,
-`       __
-      <(     o)___
-       ( ._> /
-        '---'`,
-`       __
-      <(      o)___
-       ( ._> /
-        '---'`,
-`       __
-      <(       o)___
-       ( ._> /
-        '---'`,
-`       __
-      <(        o)___
-       ( ._> /
-        '---'`
+const linkForm = document.getElementById('link-form');
+const pumpfunLinkInput = document.getElementById('pumpfun-link');
+const consoleOutput = document.getElementById('console-output');
+
+const analysisTemplates = [
+    "Analyzing blockchain patterns...\nRisk assessment in progress...\n\nDuckAI's Advice: After thorough analysis, it appears that this project shows significant potential. Investing might be a wise decision.",
+    "Scanning for market anomalies...\nEvaluating community engagement...\n\nDuckAI's Advice: The data suggests caution. It might be best to stay away from this investment opportunity.",
+    "Decrypting smart contract code...\nAssessing tokenomics...\n\nDuckAI's Advice: This project has a promising roadmap. Consider investing after further personal research.",
+    "Compiling transaction histories...\nLooking for red flags...\n\nDuckAI's Advice: Multiple risks detected. It is advisable to avoid investing in this project.",
+    "Examining developer credentials...\nCross-referencing social media...\n\nDuckAI's Advice: The team behind this project seems credible. Investing could be beneficial.",
+    "Assessing liquidity pools...\nMonitoring whale activities...\n\nDuckAI's Advice: High volatility detected. Proceed with caution if you choose to invest.",
+    "Analyzing market sentiment...\nReading between the lines...\n\nDuckAI's Advice: Sentiment is overwhelmingly positive. This might be a good investment opportunity.",
+    "Reviewing audit reports...\nTesting security protocols...\n\nDuckAI's Advice: Security vulnerabilities found. It is recommended to stay away from this project.",
+    "Simulating future projections...\nCalculating ROI...\n\nDuckAI's Advice: The return on investment looks favorable. Investing could yield good results.",
+    "Investigating past performance...\nComparing with competitors...\n\nDuckAI's Advice: This project doesn't stand out among its peers. Consider other options."
 ];
 
-let frameIndex = 0;
-
-// Function to animate the ASCII duck
-function animateDuck() {
-    asciiDuckElement.textContent = duckFrames[frameIndex];
-    frameIndex = (frameIndex + 1) % duckFrames.length;
-}
-
-// Animate duck every 200ms
-setInterval(animateDuck, 200);
-
-// Interactive effect on mouse move
-document.addEventListener('mousemove', (event) => {
-    const x = event.clientX / window.innerWidth - 0.5;
-    const y = event.clientY / window.innerHeight - 0.5;
-    const scale = 1 + y * 0.2;
-    asciiDuckElement.style.transform = `translate(-50%, -50%) scale(${scale}) rotate(${x * 10}deg)`;
-});
-
-// ====================================
-// 2. AI-Inspired Background Animation
-// ====================================
-
-const canvas = document.getElementById('background-canvas');
-const ctx = canvas.getContext('2d');
-let width, height;
-
-function resizeCanvas() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-const particles = [];
-const particleCount = 150;
-
-// Create particles
-for (let i = 0; i < particleCount; i++) {
-    particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 1,
-        vy: (Math.random() - 0.5) * 1,
-        size: Math.random() * 2 + 0.5
-    });
-}
-
-function drawBackground() {
-    ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = '#00ff00';
-    particles.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // Wrap around edges
-        if (p.x < 0) p.x = width;
-        if (p.x > width) p.x = 0;
-        if (p.y < 0) p.y = height;
-        if (p.y > height) p.y = 0;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-    });
-    requestAnimationFrame(drawBackground);
-}
-drawBackground();
-
-// ====================================
-// 3. Egg Hatching Feature
-// ====================================
-
-const eggMessages = [
-    "Welcome to the world of $DUCKY!",
-    "DuckAI says: Quack! Time to explore AI.",
-    "An egg has hatched! Discover new possibilities.",
-    "DuckAI's tip: Keep swimming forward.",
-    "You've unlocked a new feature!",
-    "Embrace the future with DuckAI.",
-    "Your crypto journey begins now!",
-    "The egg cracks open with wisdom.",
-    "Dive into the data lake!",
-    "Hatch success! Let's innovate."
-];
-
-function hatchEgg() {
-    const randomMessage = eggMessages[Math.floor(Math.random() * eggMessages.length)];
-    displayMessage(randomMessage);
-}
-
-document.getElementById('hatch-btn').addEventListener('click', hatchEgg);
-
-// ====================================
-// 4. Interact with DuckAI
-// ====================================
-
-const interactMessages = [
-    "DuckAI is thinking...",
-    "Analyzing blockchain data...",
-    "Scanning for market trends...",
-    "Optimizing neural networks...",
-    "Compiling smart contracts...",
-    "Connecting to decentralized nodes...",
-    "Encrypting messages...",
-    "Mining new blocks...",
-    "Processing AI algorithms...",
-    "Synchronizing with $DUCKY ledger..."
-];
-
-function interactWithDuckAI() {
-    const randomMessage = interactMessages[Math.floor(Math.random() * interactMessages.length)];
-    displayMessage(randomMessage);
-}
-
-document.getElementById('interact-btn').addEventListener('click', interactWithDuckAI);
-
-// ====================================
-// 5. Display Message Function
-// ====================================
-
-function displayMessage(message) {
-    let messageBox = document.getElementById('message-box');
-    if (!messageBox) {
-        messageBox = document.createElement('div');
-        messageBox.id = 'message-box';
-        document.body.appendChild(messageBox);
+linkForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const link = pumpfunLinkInput.value.trim();
+    if (link === '') {
+        alert('Please enter a PumpFun link.');
+        return;
     }
-    messageBox.textContent = message;
-    messageBox.style.opacity = '1';
+    startAnalysis(link);
+});
 
-    // Fade out after 3 seconds
-    setTimeout(() => {
-        messageBox.style.opacity = '0';
-    }, 3000);
+function startAnalysis(link) {
+    consoleOutput.innerHTML = '';
+    const loadingMessages = [
+        `Connecting to PumpFun servers...`,
+        `Downloading data from ${link}...`,
+        `Decrypting data packets...`,
+        `Analyzing blockchain transactions...`,
+        `Compiling intelligence reports...`,
+        `Applying AI algorithms...`,
+        `Generating recommendations...`
+    ];
+
+    let index = 0;
+
+    const loadingInterval = setInterval(() => {
+        if (index < loadingMessages.length) {
+            consoleOutput.innerHTML += loadingMessages[index] + '\n';
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+            index++;
+        } else {
+            clearInterval(loadingInterval);
+            generateAnalysis();
+        }
+    }, 1000);
 }
 
-// ====================================
-// 6. Window Resize Handling
-// ====================================
+function generateAnalysis() {
+    consoleOutput.innerHTML += '\nAnalysis complete.\n';
+    const randomAnalysis = analysisTemplates[Math.floor(Math.random() * analysisTemplates.length)];
+    consoleOutput.innerHTML += randomAnalysis + '\n';
 
-window.addEventListener('resize', () => {
-    resizeCanvas();
-});
+    // Create a download button for the analysis
+    const downloadBtn = document.createElement('button');
+    downloadBtn.id = 'download-btn';
+    downloadBtn.textContent = 'Download Analysis';
+    downloadBtn.addEventListener('click', () => {
+        downloadAnalysis(randomAnalysis);
+    });
+    document.getElementById('overlay').appendChild(downloadBtn);
+}
+
+function downloadAnalysis(analysisText) {
+    const blob = new Blob([analysisText], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.download = 'DuckAI_Analysis.txt';
+    link.href = window.URL.createObjectURL(blob);
+    link.click();
+}
