@@ -1,5 +1,5 @@
 // ====================================
-// 1. PumpFun Crypto Analyzer with Enhanced Features
+// 1. PumpFun Crypto Analyzer with Ducky Enhancements
 // ====================================
 
 // Elements
@@ -10,29 +10,30 @@ const visualizationContainer = document.getElementById('visualization-container'
 const neuralCanvas = document.getElementById('neural-network-canvas');
 const progressBar = document.getElementById('progress-bar');
 const chatbotContainer = document.getElementById('chatbot-container');
+const downloadContainer = document.getElementById('download-container');
 
-// Analysis Templates
+// Ducky Analysis Template
 function createDetailedAnalysis() {
     const riskScore = (Math.random() * 100).toFixed(2);
     const predictedROI = (Math.random() * 200 - 50).toFixed(2);
     const confidenceInterval = (Math.random() * 10 + 90).toFixed(2);
 
     return `
-DuckAI Comprehensive Analysis Report:
+🦆 DuckAI's Quacktastic Analysis Report 🦆
 
-- Risk Score: ${riskScore}/100
-- Predicted ROI: ${predictedROI}%
-- Confidence Level: ${confidenceInterval}%
+🐤 Risk Score: ${riskScore}/100
+💰 Predicted ROI: ${predictedROI}%
+🔒 Confidence Level: ${confidenceInterval}%
 
-Key Findings:
-1. Market volatility is ${riskScore > 50 ? 'high' : 'low'}, affecting potential returns.
-2. Sentiment analysis indicates a ${predictedROI > 0 ? 'positive' : 'negative'} outlook.
-3. AI models predict a ${confidenceInterval}% confidence in these results.
+🦆 **Key Findings:**
+1. Market volatility is ${riskScore > 50 ? 'high 🌀' : 'low 🌊'}, affecting potential returns.
+2. Sentiment analysis indicates a ${predictedROI > 0 ? 'positive 📈' : 'negative 📉'} outlook.
+3. DuckAI's algorithms quack a ${confidenceInterval}% confidence in these results.
 
-Recommendations:
-${riskScore > 50 ? 'Proceed with caution. Further due diligence is advised.' : 'Investment opportunity appears favorable.'}
+🦆 **Recommendations:**
+${riskScore > 50 ? 'Proceed with caution. Swim carefully in these waters. 🦆' : 'The waters are calm. This could be a golden egg! 🥚'}
 
-*This report was generated using DuckAI's proprietary machine learning algorithms.*
+*This report was lovingly crafted by DuckAI's AI feathers and webbed feet.*
 `;
 }
 
@@ -54,17 +55,19 @@ function startAnalysis(link) {
     animateNeuralNetwork();
     animateProgressBar();
     chatbotContainer.classList.add('hidden');
+    downloadContainer.innerHTML = ''; // Clear previous download button
+
     const loadingMessages = [
-        `Initializing DuckAI Neural Networks...\n`,
-        `Processing data from ${link}...\n`,
-        `Performing Deep Learning Analysis...\n`,
-        `Applying Predictive Modeling Algorithms...\n`,
-        `Finalizing Report Generation...\n`
+        `🌐 Connecting to PumpFun pond...`,
+        `🦆 DuckAI is waddling through ${link}...`,
+        `🔍 Diving deep into the data lake...`,
+        `💡 Analyzing with AI quacks and neural networks...`,
+        `📝 Preparing your quacktastic report...`
     ];
 
     function displayNextMessage(i) {
         if (i < loadingMessages.length) {
-            displayConsoleMessage(loadingMessages[i], () => {
+            displayConsoleMessage(loadingMessages[i] + '\n', () => {
                 displayNextMessage(i + 1);
             });
         } else {
@@ -93,7 +96,7 @@ function displayConsoleMessage(message, callback) {
 
 // Generate Analysis Function
 function generateAnalysis() {
-    consoleOutput.innerHTML += '\nAnalysis complete.\n';
+    consoleOutput.innerHTML += '\n🦆 Analysis complete! 🦆\n';
     const analysis = createDetailedAnalysis();
     consoleOutput.innerHTML += analysis + '\n';
 
@@ -104,11 +107,11 @@ function generateAnalysis() {
     // Create a download button for the analysis
     const downloadBtn = document.createElement('button');
     downloadBtn.id = 'download-btn';
-    downloadBtn.textContent = 'Download Analysis';
+    downloadBtn.textContent = 'Download Your Duckport';
     downloadBtn.addEventListener('click', () => {
         downloadAnalysis(analysis);
     });
-    document.getElementById('overlay').appendChild(downloadBtn);
+    downloadContainer.appendChild(downloadBtn);
 
     // Show chatbot
     chatbotContainer.classList.remove('hidden');
@@ -157,7 +160,7 @@ function animateNeuralNetwork() {
     createNeuralNetworkNodes();
     function drawNeuralNetwork() {
         neuralCtx.clearRect(0, 0, neuralWidth, neuralHeight);
-        neuralCtx.fillStyle = '#00ff00';
+        neuralCtx.fillStyle = '#ff9800';
 
         nodes.forEach(node => {
             node.x += node.vx;
@@ -181,7 +184,7 @@ function animateNeuralNetwork() {
                 const dy = nodes[i].y - nodes[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 if (distance < 100) {
-                    neuralCtx.strokeStyle = `rgba(0, 255, 0, ${1 - distance / 100})`;
+                    neuralCtx.strokeStyle = `rgba(255, 152, 0, ${1 - distance / 100})`;
                     neuralCtx.beginPath();
                     neuralCtx.moveTo(nodes[i].x, nodes[i].y);
                     neuralCtx.lineTo(nodes[j].x, nodes[j].y);
@@ -235,7 +238,7 @@ chatbotInput.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         const userMessage = this.value.trim();
         if (userMessage !== '') {
-            addChatbotMessage('User', userMessage);
+            addChatbotMessage('You', userMessage);
             this.value = '';
             generateChatbotResponse(userMessage);
         }
@@ -244,19 +247,19 @@ chatbotInput.addEventListener('keydown', function(event) {
 
 function addChatbotMessage(sender, message) {
     const messageElement = document.createElement('div');
-    messageElement.textContent = `${sender}: ${message}`;
+    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
     chatbotMessages.appendChild(messageElement);
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 }
 
 function generateChatbotResponse(userMessage) {
     const responses = [
-        "Based on my analysis, the project shows promise.",
-        "Caution is advised. Further research is recommended.",
-        "Our AI models indicate potential for growth.",
-        "The market trends are favorable.",
-        "Risk factors are high; proceed carefully.",
-        "Investment could yield good returns."
+        "Quack! Based on my analysis, this project looks promising!",
+        "Hmm, the waters seem murky. Proceed with caution!",
+        "Our feathers indicate potential for growth!",
+        "The crypto pond is calm; might be a good time to dive in!",
+        "Watch out for sharks! Risk factors are high!",
+        "This could be a golden egg! Let's keep an eye on it!"
     ];
     const response = responses[Math.floor(Math.random() * responses.length)];
     setTimeout(() => {
