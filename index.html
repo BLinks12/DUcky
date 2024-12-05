@@ -2,23 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DuckAI - Advanced PumpFun Crypto Analyzer</title>
+    <title>DuckAI 🦆 - Quacktastic PumpFun Crypto Analyzer</title>
     <!-- Link to the CSS file -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Include Google Fonts for better typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Overlay Content -->
-    <div id="overlay">
+    <!-- DuckAI Header -->
+    <header>
+        <img src="duckai_logo.png" alt="DuckAI Logo" id="logo">
         <h1>DuckAI</h1>
-        <h2>Advanced PumpFun Crypto Analyzer</h2>
-        <p>Experience AI-driven insights into your favorite PumpFun crypto projects.</p>
+        <h2>Quacktastic PumpFun Crypto Analyzer</h2>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <p>Welcome to DuckAI's pond! Dive in and let our feathered AI friend waddle through the complexities of PumpFun crypto projects for you.</p>
 
         <!-- Form to submit PumpFun link -->
         <form id="link-form">
             <input type="text" id="pumpfun-link" placeholder="Enter PumpFun link here..." required>
-            <button type="submit">Analyze</button>
+            <button type="submit">Let’s Quack It!</button>
         </form>
 
         <!-- Visualization Container -->
@@ -32,12 +37,20 @@
         <!-- Console Output -->
         <div id="console-output"></div>
 
+        <!-- Download Button (Created dynamically) -->
+        <div id="download-container"></div>
+
         <!-- Chatbot Container -->
         <div id="chatbot-container" class="hidden">
             <div id="chatbot-messages"></div>
-            <input type="text" id="chatbot-input" placeholder="Ask DuckAI...">
+            <input type="text" id="chatbot-input" placeholder="Ask DuckAI anything...">
         </div>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 DuckAI. Making waves in the crypto pond!</p>
+    </footer>
 
     <!-- Include the JavaScript file -->
     <script src="script.js"></script>
