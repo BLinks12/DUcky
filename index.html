@@ -2,23 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DuckAI - PumpFun Crypto Analyzer</title>
+    <title>DuckAI - Advanced PumpFun Crypto Analyzer</title>
+    <!-- Link to the CSS file -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Include Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Overlay Content -->
     <div id="overlay">
         <h1>DuckAI</h1>
-        <h2>PumpFun Crypto Analyzer</h2>
-        <p>Submit a PumpFun crypto link for DuckAI's analysis.</p>
+        <h2>Advanced PumpFun Crypto Analyzer</h2>
+        <p>Experience AI-driven insights into your favorite PumpFun crypto projects.</p>
+
+        <!-- Form to submit PumpFun link -->
         <form id="link-form">
             <input type="text" id="pumpfun-link" placeholder="Enter PumpFun link here..." required>
             <button type="submit">Analyze</button>
         </form>
+
+        <!-- Visualization Container -->
+        <div id="visualization-container" class="hidden">
+            <canvas id="neural-network-canvas"></canvas>
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+
+        <!-- Console Output -->
         <div id="console-output"></div>
+
+        <!-- Chatbot Container -->
+        <div id="chatbot-container" class="hidden">
+            <div id="chatbot-messages"></div>
+            <input type="text" id="chatbot-input" placeholder="Ask DuckAI...">
+        </div>
     </div>
 
-    <!-- Include JavaScript code -->
+    <!-- Include the JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
